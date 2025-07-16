@@ -3,7 +3,7 @@ import css from './header.module.css';
 
 const Header = ({ children }) => {
   return (
-    <header>
+    <header className={css.header}>
       <h1 className={css.title}>{children}</h1>
     </header>
   );

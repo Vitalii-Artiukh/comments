@@ -1,12 +1,13 @@
-.header {
+.footer {
   display: flex;
   align-items: center;
   gap: 2rem;
   padding: 2.5rem 4rem;
-  border-bottom: 1px solid black;
-  background-color: lightgray;
+  border-top: 1px solid black;
+  background-color: dimgrey;
 }
 
 .title {
   font-size: 2rem;
+  color: #ffffff;
 }
