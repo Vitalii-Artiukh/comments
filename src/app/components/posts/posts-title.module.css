@@ -1,3 +1,30 @@
-.title {
-  padding-left: 2rem;
+.wrapper {
+  padding-left: 1.5rem;
+}
+
+.wrapPostTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.postTitle {
+  font-weight: normal;
+  font-size: 1.5rem;
+  padding: 0.2rem 0;
+}
+
+.readLink {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 200ms;
+  text-decoration: none;
+}
+
+.readButton:hover,
+.readButton:focus,
+.readButton:active {
+  background-color: darkgray;
+  color: white;
+  border: 1px solid black;
 }

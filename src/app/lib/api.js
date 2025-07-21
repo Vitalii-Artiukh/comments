@@ -17,3 +17,7 @@ const sendRequest = async (url, init) => {
 };
 
 export const getPosts = () => sendRequest(buildUrl());
+
+export const getPostText = (id, init) => {
+  return sendRequest(buildUrl(id), init);
+};

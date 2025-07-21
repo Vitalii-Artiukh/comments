@@ -2,16 +2,21 @@ import React from 'react';
 import { getPosts } from '@/app/lib/api';
 import clsx from 'clsx';
 import css from './posts-title.module.css';
+import Link from 'next/link';
 
 const PostsTitle = async () => {
   const posts = await getPosts();
 
   return (
-    <div>
-      {posts.map(({ id, userId, title }) => (
-        <h3 key={id} className={clsx(css.title)}>
-          {`${id} user ${userId} ${title}`}
-        </h3>
+    <div className={css.wrapper}>
+      <h2>Posts</h2>
+      {posts.map(({ id, title }) => (
+        <div key={id} className={css.wrapPostTitle}>
+          <h3 className={clsx(css.postTitle)}>{title} </h3>
+          <Link href={`/post/${id}`} className={css.readLink}>
+            read my
+          </Link>
+        </div>
       ))}
     </div>
   );
