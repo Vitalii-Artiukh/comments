@@ -1,16 +1,15 @@
 import React from 'react';
 import Header from '@/app/components/header/header';
 import Footer from '@/app/components/footer/footer';
-import PostsTitle from '@/app/components/posts/posts-title';
-import Link from 'next/link';
 
-export default async function Home() {
+export default function Layout({ children }) {
   return (
     <>
       <Header />
       <main>
-        <PostsTitle />
+        <div>{children}</div>
       </main>
+
       <Footer>Footer</Footer>
     </>
   );

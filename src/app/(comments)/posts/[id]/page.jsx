@@ -4,7 +4,7 @@ import Header from '@/app/components/header/header';
 import Footer from '@/app/components/footer/footer';
 
 export default async function Page({ params }) {
-  const { id } = params;
+  const { id } = await params;
   const post = await getPostText(id);
 
   const user = () => {
@@ -16,12 +16,12 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <Header>{user()}</Header>
-
+      {/*<Header>{user()}</Header>*/}
+      {/*<main>*/}
       <h2>{post.title}</h2>
       <p>{post.body}</p>
-
-      <Footer>{user()}</Footer>
+      {/*</main>*/}
+      {/*<Footer>{user()}</Footer>*/}
     </>
   );
 }
