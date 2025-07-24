@@ -12,7 +12,7 @@ const PostsTitle = async () => {
       <h2>Posts</h2>
       {posts.map(({ id, title }) => (
         <div key={id} className={css.wrapPostTitle}>
-          <h3 className={clsx(css.postTitle)}>{title} </h3>
+          <h3 className={clsx(css.postTitle)}>{title}</h3>
           <Link href={`/posts/${id}`} className={css.readLink}>
             read my
           </Link>

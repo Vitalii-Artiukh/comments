@@ -1,11 +1,13 @@
 .wrapper {
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 
 .wrapPostTitle {
   display: flex;
-  align-items: center;
+  /*flex-direction: column;*/
   gap: 1rem;
+  align-items: start;
+  /*padding: 0.4rem 0;*/
 }
 
 .postTitle {
@@ -19,6 +21,9 @@
   cursor: pointer;
   transition: all 200ms;
   text-decoration: none;
+  padding: 0.2rem 1rem;
+  margin-left: auto;
+  min-width: 100px;
 }
 
 .readButton:hover,
