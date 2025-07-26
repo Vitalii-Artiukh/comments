@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "common": {
+    "posts": "Posts",
+    "readMy": "Read my"
+  },
+  "footer": {
+    "name": "Name",
+    "email": "Email"
+  }
+}
