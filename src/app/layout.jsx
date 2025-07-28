@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }) {
-  const dictionary = await getDictionary(params.lang);
+  const { lang = LOCALS.EN } = (await params) || {};
+  const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body className={fonts.className}>
         <Providers>{children}</Providers>
       </body>

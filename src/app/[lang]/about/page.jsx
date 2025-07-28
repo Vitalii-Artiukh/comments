@@ -1,10 +1,11 @@
 import React from 'react';
 import About from '@/app/components/about/about';
 
-const Page = () => {
+const Page = async ({ params }) => {
+  const { lang } = await params;
   return (
     <div>
-      <About />
+      <About lang={lang} />
     </div>
   );
 };

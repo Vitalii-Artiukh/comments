@@ -1,5 +1,3 @@
-// 'use client';
-
 import React from 'react';
 import { getPosts } from '@/app/lib/api';
 import clsx from 'clsx';

@@ -1,7 +1,8 @@
 import React from 'react';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 
-const About = async ({ params: { lang } }) => {
+const About = async ({ lang }) => {
+  // const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (

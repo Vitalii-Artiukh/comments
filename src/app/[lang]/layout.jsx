@@ -7,17 +7,17 @@ export async function generateStaticParams() {
   return [{ lang: 'uk' }, { lang: 'en' }];
 }
 
-export default async function Layout({ children, params: { lang } }) {
+export default async function Layout({ children, params }) {
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (
     <>
-      {/*<Header dictionary={dictionary} lang={lang} />*/}
+      <Header dictionary={dictionary} lang={lang} />
       <main>
         <div>{children}</div>
       </main>
-
-      {/*<Footer>Footer</Footer>*/}
+      <Footer>Footer</Footer>
     </>
   );
 }

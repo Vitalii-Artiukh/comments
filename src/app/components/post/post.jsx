@@ -2,13 +2,14 @@ import React from 'react';
 import { getPostText } from '@/app/lib/api';
 import css from './post.module.css';
 
-export default async function Post({ params }) {
-  const { id } = await params;
+export default async function Post({ id }) {
+  if (!id) return null;
   const post = await getPostText(id);
+  console.log(id);
 
   const user = () => {
-    if (post.name && post.name !== '') {
-      return `User: ${post.name}`;
+    if (post.userName && post.userName !== '') {
+      return `User: ${post.userName}`;
     }
     return `User id: ${post.userId}`;
   };

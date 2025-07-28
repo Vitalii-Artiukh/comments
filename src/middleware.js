@@ -9,6 +9,10 @@ export function middleware(request) {
   // Пропускаємо статичні файли
   if (PUBLIC_FILE.test(pathname)) return;
 
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL(`/${LOCALS.EN}`, request.url));
+  }
+
   // Перевіряємо чи URL вже містить локаль
   if (
     pathname.startsWith(`/${LOCALS.EN}/`) ||
@@ -21,7 +25,7 @@ export function middleware(request) {
 
   // Перенаправляємо на українську версію за замовчуванням
   return NextResponse.redirect(
-    new URL(`/${LOCALS.UK}${pathname}`, request.url)
+    new URL(`/${LOCALS.EN}${pathname}`, request.url)
   );
 }
 
