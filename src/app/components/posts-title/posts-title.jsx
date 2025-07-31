@@ -1,11 +1,26 @@
+'use client';
+
 import React from 'react';
 import { getPosts } from '@/app/lib/api';
 import clsx from 'clsx';
 import css from './posts-title.module.css';
 import Link from 'next/link';
+import { useQuery } from '@tanstack/react-query';
 
-const PostsTitle = async ({ dictionary, lang }) => {
-  const posts = await getPosts();
+const PostsTitle = ({ dictionary, lang }) => {
+  // const posts = await getPosts();
+  const {
+    data: posts,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ['posts'],
+    queryFn: () => getPosts(),
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error:{error.message}</div>;
+  if (!posts) return null;
 
   return (
     <div className={css.wrapper}>

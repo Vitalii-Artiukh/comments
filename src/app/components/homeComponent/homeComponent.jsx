@@ -1,3 +1,5 @@
+// 'use client';
+
 import React from 'react';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 import PostsTitle from '@/app/components/posts-title/posts-title';

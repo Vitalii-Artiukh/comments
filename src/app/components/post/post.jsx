@@ -5,7 +5,6 @@ import css from './post.module.css';
 export default async function Post({ id }) {
   if (!id) return null;
   const post = await getPostText(id);
-  console.log(id);
 
   const user = () => {
     if (post.userName && post.userName !== '') {
