@@ -6,6 +6,14 @@ import { getPosts } from '@/app/lib/api';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import PostsTitle from '@/app/components/posts-title/posts-title';
 
+export async function generateStaticParams() {
+  const locales = ['uk', 'en'];
+
+  return locales.map((lang) => ({
+    lang,
+  }));
+}
+
 export default async function Page({ params }) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);

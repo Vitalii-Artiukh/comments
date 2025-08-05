@@ -1,10 +1,17 @@
 import React from 'react';
-import HomeComponent from '@/app/components/homeComponent/homeComponent';
 import getQueryClient from '@/app/lib/utils/getQueryClient';
 import { getPosts } from '@/app/lib/api';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import PostsTitle from '@/app/components/posts-title/posts-title';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
+
+export async function generateStaticParams() {
+  const locales = ['uk', 'en'];
+
+  return locales.map((lang) => ({
+    lang,
+  }));
+}
 
 export default async function Home({ params }) {
   const queryClient = getQueryClient();
