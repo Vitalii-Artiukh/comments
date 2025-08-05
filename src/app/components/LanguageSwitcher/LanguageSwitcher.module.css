@@ -1,0 +1,17 @@
+.languageWrapper {
+  position: absolute;
+  right: 2.5rem;
+  top: 0.5rem;
+  border-radius: 25%;
+  overflow: hidden;
+  height: 24px;
+}
+
+/*.language {*/
+/*  object-fit: cover;*/
+/*  !*font-size: 0.7rem;*!*/
+/*}*/
+
+.flag {
+  object-fit: cover;
+}

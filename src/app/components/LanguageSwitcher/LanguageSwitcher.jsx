@@ -4,6 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LOCALS } from '@/app/lib/utils/constants';
+import css from './LanguageSwitcher.module.css';
+import Image from 'next/image';
 
 const LanguageSwitcher = ({ currentLang }) => {
   const pathname = usePathname();
@@ -14,11 +16,37 @@ const LanguageSwitcher = ({ currentLang }) => {
     return segments.join('/');
   };
   return (
-    <div>
+    <div className={css.languageWrapper}>
       {currentLang === LOCALS.UK ? (
-        <Link href={redirectedPathName(LOCALS.EN)}>English</Link>
+        <Link
+          className={css.language}
+          href={redirectedPathName(LOCALS.EN)}
+          title="English"
+        >
+          <Image
+            className={css.flag}
+            src="/FlagUnitedKingdom.png"
+            alt="English"
+            width={34}
+            height={24}
+            priority
+          />
+        </Link>
       ) : (
-        <Link href={redirectedPathName(LOCALS.UK)}>Українська</Link>
+        <Link
+          className={css.language}
+          href={redirectedPathName(LOCALS.UK)}
+          title="Українська"
+        >
+          <Image
+            className={css.flag}
+            src="/flagUkraine.png"
+            alt="Українська"
+            width={34}
+            height={24}
+            priority
+          />
+        </Link>
       )}
     </div>
   );

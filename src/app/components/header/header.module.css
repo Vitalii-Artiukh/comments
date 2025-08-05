@@ -1,16 +1,33 @@
 .header {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem 2.5rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  /*padding: 1rem 0;*/
   border-bottom: 1px solid black;
   background-color: lightgray;
+  width: 100%;
+}
+
+.dataWrapper {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  height: 75px;
+  padding: 0.5rem 0;
+}
+
+.homeLink {
+  display: flex;
+  align-items: center;
 }
 
 .title {
   font-size: 2rem;
+  /*vertical-align: revert;*/
 }
 
-.about {
+.aboutLink {
+  display: flex;
+  align-items: end;
   margin-left: auto;
 }

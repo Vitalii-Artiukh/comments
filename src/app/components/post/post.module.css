@@ -1,12 +1,14 @@
 .postWrapper {
-  padding: 1.5rem;
+  /*padding: 1.5rem;*/
 }
 
 .title {
   margin-bottom: 1rem;
   max-width: 450px;
+  padding: 1.5rem 0;
 }
 
 .post {
   max-width: 800px;
+  padding-left: 1.5rem;
 }

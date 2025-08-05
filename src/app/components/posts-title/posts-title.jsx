@@ -24,10 +24,12 @@ const PostsTitle = ({ dictionary, lang }) => {
 
   return (
     <div className={css.wrapper}>
-      <h2>{dictionary.common.posts}</h2>
-      {posts.map(({ id, title }) => (
+      <h2 className={css.title}>{dictionary.common.posts}</h2>
+      {posts.map(({ id, title, body }) => (
         <div key={id} className={css.wrapPostTitle}>
-          <h3 className={clsx(css.postTitle)}>{title}</h3>
+          <h3 className={clsx(css.postTitle)} title={body}>
+            {title}
+          </h3>
           <Link href={`/${lang}/posts/${id}`} className={css.readLink}>
             {dictionary.common.readMy}
           </Link>

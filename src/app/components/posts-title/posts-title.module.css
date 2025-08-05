@@ -1,13 +1,19 @@
 .wrapper {
-  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
 }
 
 .wrapPostTitle {
   display: flex;
-  /*flex-direction: column;*/
   gap: 1rem;
-  align-items: start;
-  /*padding: 0.4rem 0;*/
+  align-items: flex-start;
+  padding-left: 1.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 28px;
 }
 
 .postTitle {
@@ -21,15 +27,15 @@
   cursor: pointer;
   transition: all 200ms;
   text-decoration: none;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 0;
+  text-align: right;
   margin-left: auto;
   min-width: 100px;
 }
 
-.readButton:hover,
-.readButton:focus,
-.readButton:active {
-  background-color: darkgray;
-  color: white;
-  border: 1px solid black;
+.readLink:hover,
+.readLink:focus,
+.readLink:active {
+  text-decoration: underline;
+  text-shadow: darkred 0.5px 0.5px;
 }
