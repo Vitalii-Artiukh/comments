@@ -1,0 +1,20 @@
+.title {
+  margin-bottom: 1rem;
+}
+
+.titleText {
+  font-size: 20px;
+}
+
+.text {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.textEmail {
+  color: darkblue;
+}
+
+.aboutWrapper > .titleText:first-of-type {
+  margin-bottom: 0.5rem;
+}

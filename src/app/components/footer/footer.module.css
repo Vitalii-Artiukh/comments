@@ -1,8 +1,8 @@
 .footer {
-  /*position: sticky;*/
-  /*bottom: 0;*/
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*padding: 0.5rem 0;*/
 
-  padding: 2.5rem 0;
   border-top: 1px solid black;
   background-color: dimgrey;
   width: 100%;
@@ -11,10 +11,35 @@
 .dataWrapper {
   display: flex;
   align-items: center;
+  height: 99px;
   gap: 2rem;
+  padding: 0.5rem;
 }
 
-.title {
-  font-size: 2rem;
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 0.7rem;
+}
+
+.devInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  color: #ffffff;
+}
+
+.devName {
+  font-size: 20px;
+  color: #ffd700;
+}
+
+.aboutLink {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  margin-left: auto;
   color: #ffffff;
 }

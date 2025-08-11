@@ -22,7 +22,7 @@ export default async function Layout({ children, params }) {
         </Container>
       </main>
 
-      <Footer>Footer</Footer>
+      <Footer dictionary={dictionary} lang={lang} />
     </>
   );
 }

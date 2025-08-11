@@ -8,8 +8,10 @@
     "posts": "Дописи",
     "readMy": "Читати"
   },
-  "footer": {
-    "name": "Ім'я",
-    "email": "Електрона адреса"
+  "about": {
+    "titleName": "Ім'я розробника",
+    "titleEmail": "Електрона адреса розробника",
+    "name": "Віталій Артюх",
+    "email": "radial_car@yahoo.com"
   }
 }

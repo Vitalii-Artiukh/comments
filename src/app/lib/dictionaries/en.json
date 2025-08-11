@@ -7,8 +7,10 @@
     "posts": "Posts",
     "readMy": "Read my"
   },
-  "footer": {
-    "name": "Name",
-    "email": "Email"
+  "about": {
+    "titleName": "Developer name",
+    "titleEmail": "Developer email",
+    "name": "Vitalii Artiukh",
+    "email": "radial_car@yahoo.com"
   }
 }
