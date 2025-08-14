@@ -23,7 +23,7 @@ export function middleware(request) {
     return;
   }
 
-  // Перенаправляємо на українську версію за замовчуванням
+  // Перенаправляємо на англійську версію за замовчуванням
   return NextResponse.redirect(
     new URL(`/${LOCALS.EN}${pathname}`, request.url)
   );

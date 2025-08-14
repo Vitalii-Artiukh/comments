@@ -1,6 +1,8 @@
 import React from 'react';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 import css from './about.module.css';
+import { EMAIL } from '@/app/lib/utils/constants';
+import Link from 'next/link';
 
 const About = async ({ lang }) => {
   // const { lang } = await params;
@@ -15,7 +17,9 @@ const About = async ({ lang }) => {
       </p>
       <p className={css.titleText}>
         {dictionary.about.titleEmail}:{' '}
-        <span className={css.textEmail}>{dictionary.about.email}</span>
+        <Link className={css.textEmail} href={`mailto:${EMAIL}`}>
+          {EMAIL}
+        </Link>
       </p>
     </div>
   );

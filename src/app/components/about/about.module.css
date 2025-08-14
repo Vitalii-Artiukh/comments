@@ -13,6 +13,11 @@
 
 .textEmail {
   color: darkblue;
+  text-decoration: none;
+}
+
+.textEmail:hover {
+  text-decoration: underline;
 }
 
 .aboutWrapper > .titleText:first-of-type {

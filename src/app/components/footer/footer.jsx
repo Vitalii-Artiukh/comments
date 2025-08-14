@@ -2,6 +2,7 @@ import React from 'react';
 import css from './footer.module.css';
 import Container from '@/app/components/container/container';
 import Link from 'next/link';
+import { EMAIL } from '@/app/lib/utils/constants';
 
 const Footer = ({ dictionary, lang, children }) => {
   return (
@@ -10,11 +11,11 @@ const Footer = ({ dictionary, lang, children }) => {
         <div className={css.textWrapper}>
           <p className={css.devInfo}>
             {dictionary.about.titleName}:
-            <span className={css.devName}>Vitalii Artiukh</span>
+            <span className={css.devName}>{dictionary.about.name}</span>
           </p>
           <p className={css.devInfo}>
             {dictionary.about.titleEmail}:
-            <span className={css.devName}>radial_car@yahoo.com</span>
+            <span className={css.devName}>{EMAIL}</span>
           </p>
         </div>
 
