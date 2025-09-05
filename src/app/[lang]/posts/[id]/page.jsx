@@ -5,23 +5,28 @@ import { getPostText } from '@/app/lib/api';
 export async function generateStaticParams() {
   const posts = await getPostText();
 
-  const limitedPosts = posts.slice(0, 20);
+  // Якщо потрібно обмежити кількість статичних сторінок до 10
+  // const limitedPosts = posts.slice(0, 10);
 
-  const params = [];
+  // const params = [];
 
-  for (const post of limitedPosts) {
-    params.push({
-      id: post.id.toString(),
-    });
-  }
+  // for (const post of limitedPosts) {
+  //   params.push({
+  //     id: post.id.toString(),
+  //   });
+  // }
+  //
+  // return params;
 
-  return params;
+  return posts.slice(0, 15).map((post) => ({
+    id: post.id.toString(),
+  }));
 }
 
 export const dynamicParams = true;
 
 export default async function Page({ params }) {
-  const { id } = await params;
+  const { id } = params;
 
   return (
     <>

@@ -8,8 +8,9 @@
     "readMy": "Read my"
   },
   "about": {
-    "titleName": "Developer name",
-    "titleEmail": "Developer email",
+    "projectDescription": "This is a test project, to better understand Next.js, multilingualism, and the difference between static generation (SSG) generateStaticParams and server-side rendering (SSR)",
+    "titleForName": "Developer name",
+    "titleForEmail": "Developer email",
     "name": "Vitalii Artiukh",
     "email": "radial_car@yahoo.com"
   }

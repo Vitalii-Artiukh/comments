@@ -15,13 +15,11 @@ export default async function Layout({ children, params }) {
   return (
     <>
       <Header dictionary={dictionary} lang={lang} />
-
       <main>
         <Container>
           <div>{children}</div>
         </Container>
       </main>
-
       <Footer dictionary={dictionary} lang={lang} />
     </>
   );

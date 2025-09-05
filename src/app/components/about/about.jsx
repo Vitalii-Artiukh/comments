@@ -11,12 +11,15 @@ const About = async ({ lang }) => {
   return (
     <div className={css.aboutWrapper}>
       <h1 className={css.title}>{dictionary.nav.about}</h1>
+      <p className={css.projectDescriptions}>
+        {dictionary.about.projectDescription}
+      </p>
       <p className={css.titleText}>
-        {dictionary.about.titleName}:{' '}
+        {dictionary.about.titleForName}:{' '}
         <span className={css.text}>{dictionary.about.name}</span>
       </p>
       <p className={css.titleText}>
-        {dictionary.about.titleEmail}:{' '}
+        {dictionary.about.titleForEmail}:{' '}
         <Link className={css.textEmail} href={`mailto:${EMAIL}`}>
           {EMAIL}
         </Link>

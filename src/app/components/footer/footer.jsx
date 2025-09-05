@@ -5,17 +5,20 @@ import Link from 'next/link';
 import { EMAIL } from '@/app/lib/utils/constants';
 
 const Footer = ({ dictionary, lang, children }) => {
+  const about = dictionary?.about ?? {};
+  const titleName = about?.titleForName ?? 'Name';
+  const titleEmail = about?.titleForEmail ?? 'Email';
+
   return (
     <footer className={css.footer}>
       <Container className={css.dataWrapper}>
         <div className={css.textWrapper}>
           <p className={css.devInfo}>
-            {dictionary.about.titleName}:
+            {titleName}:
             <span className={css.devName}>{dictionary.about.name}</span>
           </p>
           <p className={css.devInfo}>
-            {dictionary.about.titleEmail}:
-            <span className={css.devName}>{EMAIL}</span>
+            {titleEmail}: <span className={css.devName}>{EMAIL}</span>
           </p>
         </div>
 

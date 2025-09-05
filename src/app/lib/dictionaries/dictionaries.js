@@ -1,15 +1,6 @@
 import 'server-only';
 
-const dictionaries = {
-  en: async () => {
-    const module = await import('./en.json');
-    return module.default;
-  },
-  uk: async () => {
-    const module = await import('./uk.json');
-    return module.default;
-  },
-};
+import { dictionaries } from '@/app/lib/utils/constants';
 
 export const getDictionary = async (locale) => {
   if (!locale || !dictionaries[locale]) {

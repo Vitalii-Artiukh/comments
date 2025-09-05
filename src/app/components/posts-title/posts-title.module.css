@@ -8,26 +8,26 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  padding-left: 1.5rem;
+  padding: 0.2rem 0 0.2rem 1.5rem;
 }
 
 .title {
   margin-bottom: 1rem;
-  font-size: 28px;
+  font-size: 1.5rem;
 }
 
 .postTitle {
   font-weight: normal;
   font-size: 1.5rem;
-  padding: 0.2rem 0;
+  padding: 0.15rem 0;
 }
 
 .readLink {
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 200ms;
   text-decoration: none;
-  padding: 0.5rem 0;
+  /*padding: 0.5rem 0;*/
   text-align: right;
   margin-left: auto;
   min-width: 100px;

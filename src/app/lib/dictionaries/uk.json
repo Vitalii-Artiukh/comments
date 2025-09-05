@@ -9,8 +9,9 @@
     "readMy": "Читати"
   },
   "about": {
-    "titleName": "Ім'я розробника",
-    "titleEmail": "Електрона адреса розробника",
+    "projectDescription": "Це тестовий проєкт, для кращого розуміння Next.js, багатомовності, і різницею між статичною генерацією (SSG) generateStaticParams та рендерингом на стороні сервера (SSR)",
+    "titleForName": "Ім'я розробника",
+    "titleForEmail": "Електрона адреса розробника",
     "name": "Віталій Артюх",
     "email": "radial_car@yahoo.com"
   }

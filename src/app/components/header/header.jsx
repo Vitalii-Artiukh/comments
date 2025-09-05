@@ -8,7 +8,7 @@ const Header = ({ dictionary, lang, children }) => {
   return (
     <header className={css.header}>
       <Container className={css.dataWrapper}>
-        <Link href={`/${lang}`} className={css.homeLink}>
+        <Link href={`/${lang}/posts`} className={css.homeLink}>
           <h1 className={css.title}>{dictionary.nav.home}</h1>
         </Link>
         <Link href={`/${lang}/about`} className={css.aboutLink}>
