@@ -34,6 +34,11 @@
 .devName {
   font-size: 20px;
   color: #ffd700;
+  text-decoration: none;
+}
+
+.devName.email:hover {
+  text-decoration: underline;
 }
 
 .aboutLink {
