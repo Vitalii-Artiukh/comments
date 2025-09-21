@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from '@/app/components/post/post';
 import { getPostText } from '@/app/lib/api';
+import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 
 export async function generateStaticParams() {
   const posts = await getPostText();
@@ -26,11 +27,13 @@ export async function generateStaticParams() {
 export const dynamicParams = true;
 
 export default async function Page({ params }) {
-  const { id } = params;
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+  const { id } = await params;
 
   return (
     <>
-      <Post id={id} />
+      <Post id={id} dictionary={dictionary} />
     </>
   );
 }

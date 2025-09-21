@@ -1,11 +1,15 @@
 .postWrapper {
-  /*padding: 1.5rem;*/
+  padding: 1rem 0;
+}
+.userName {
+  /*font-weight: bold;*/
 }
 
 .title {
   margin-bottom: 1rem;
   max-width: 450px;
   padding: 1.5rem 0;
+  font-weight: normal;
 }
 
 .post {

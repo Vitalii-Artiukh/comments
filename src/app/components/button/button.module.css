@@ -1,0 +1,17 @@
+.button {
+  padding: 2px 4px;
+  background-color: darkslategrey;
+  color: cyan;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 3px;
+  .active:hover {
+    background-color: dimgrey;
+  }
+  .active:active {
+    background-color: grey;
+  }
+  .disabled {
+    background-color: lightgrey;
+  }
+}

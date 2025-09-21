@@ -12,15 +12,17 @@ const PostsTitle = ({ dictionary, lang }) => {
   const {
     data: posts,
     isLoading,
-    error,
+    // error,
   } = useQuery({
     queryKey: ['posts'],
     queryFn: () => getPosts(),
   });
 
+  console.log(dictionary);
+
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error:{error.message}</div>;
-  if (!posts) return null;
+  // if (error) return <div>Error:{error.message}</div>;
+  // if (!posts) return null;
 
   return (
     <div className={css.wrapper}>

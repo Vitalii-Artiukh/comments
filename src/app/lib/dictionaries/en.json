@@ -5,7 +5,9 @@
   },
   "common": {
     "posts": "Posts",
-    "readMy": "Read my"
+    "readMy": "Read my",
+    "user": "User",
+    "id": "id"
   },
   "about": {
     "projectDescription": "This is a test project, to better understand Next.js, multilingualism, and the difference between static generation (SSG) generateStaticParams and server-side rendering (SSR)",
