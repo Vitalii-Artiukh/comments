@@ -1,4 +1,4 @@
-import 'server-only';
+// import 'server-only';
 
 import { dictionaries } from '@/app/lib/utils/constants';
 

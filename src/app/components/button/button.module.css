@@ -1,10 +1,13 @@
 .button {
-  padding: 2px 4px;
+  padding: 1rem 2rem;
   background-color: darkslategrey;
   color: cyan;
   text-align: center;
   font-weight: bold;
   border-radius: 3px;
+  min-width: 50px;
+  min-height: 20px;
+  margin-bottom: 1rem;
   .active:hover {
     background-color: dimgrey;
   }

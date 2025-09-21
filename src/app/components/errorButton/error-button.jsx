@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@/app/components/button/button';
 
-const ErrorButton = () => {
+const ErrorButton = (props) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (count > 4) {
-      throw new Error('багато клікаєш');
+      throw new Error('Забагато клікаєш');
     }
   }, [count]);
 

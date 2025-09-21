@@ -1,12 +1,17 @@
 import React from 'react';
 import About from '@/app/components/about/about';
 import ErrorButton from '@/app/components/errorButton/error-button';
+import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 
 const Page = async ({ params }) => {
   const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
   return (
     <div>
-      <ErrorButton />
+      <ErrorButton>
+        <p>{dictionary.common.clickButton}</p>
+      </ErrorButton>
       <About lang={lang} />
     </div>
   );

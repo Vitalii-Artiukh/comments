@@ -18,8 +18,6 @@ const PostsTitle = ({ dictionary, lang }) => {
     queryFn: () => getPosts(),
   });
 
-  console.log(dictionary);
-
   if (isLoading) return <div>Loading...</div>;
   // if (error) return <div>Error:{error.message}</div>;
   // if (!posts) return null;

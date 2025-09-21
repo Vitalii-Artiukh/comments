@@ -10,7 +10,6 @@ export default async function Post({ id, dictionary }) {
     if (post.userName && post.userName !== '') {
       return `User: ${post.userName}`;
     }
-    console.log(dictionary);
     return `${dictionary.common.user} ${dictionary.common.id}: ${post.userId}`;
   };
 
