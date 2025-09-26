@@ -10,7 +10,7 @@ export function middleware(request) {
   if (PUBLIC_FILE.test(pathname)) return;
 
   if (pathname === '/') {
-    return NextResponse.redirect(new URL(`/${LOCALS.EN}`, request.url));
+    return NextResponse.redirect(new URL(`/${LOCALS.EN}/posts`, request.url));
   }
 
   // Перевіряємо чи URL вже містить локаль

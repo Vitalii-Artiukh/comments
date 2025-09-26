@@ -4,6 +4,7 @@ import { getPosts } from '@/app/lib/api';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import PostsTitle from '@/app/components/posts-title/posts-title';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
+import ErrorButton from '@/app/components/errorButton/error-button';
 
 export async function generateStaticParams() {
   const locales = ['uk', 'en'];

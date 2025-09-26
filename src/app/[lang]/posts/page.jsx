@@ -5,6 +5,7 @@ import getQueryClient from '@/app/lib/utils/getQueryClient';
 import { getPosts } from '@/app/lib/api';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import PostsTitle from '@/app/components/posts-title/posts-title';
+import ErrorButton from '@/app/components/errorButton/error-button';
 
 export async function generateStaticParams() {
   const locales = ['uk', 'en'];
@@ -29,6 +30,7 @@ export default async function Page({ params }) {
 
   return (
     <HydrationBoundary state={dehydratedState}>
+      <ErrorButton>{dictionary.common.clickButton}</ErrorButton>
       <PostsTitle dictionary={dictionary} lang={lang} />
     </HydrationBoundary>
   );
