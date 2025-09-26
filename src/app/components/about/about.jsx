@@ -5,7 +5,6 @@ import { EMAIL } from '@/app/lib/utils/constants';
 import Link from 'next/link';
 
 const About = async ({ lang }) => {
-  // const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (

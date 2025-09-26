@@ -7,9 +7,11 @@ const Page = async ({ params }) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
+  console.log(dictionary);
+
   return (
     <div>
-      <ErrorButton>
+      <ErrorButton dictionary={dictionary}>
         <p>{dictionary.common.clickButton}</p>
       </ErrorButton>
       <About lang={lang} />
