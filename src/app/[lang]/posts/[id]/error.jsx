@@ -7,10 +7,8 @@ import Button from '@/app/components/button/button';
 const ErrorComponent = ({ error, reset }) => {
   return (
     <div>
-      <p>{`Something globally went wrong: ${error.message}`}</p>
-      <Link href={''} onClick={() => reset()}>
-        Return
-      </Link>
+      <p>{`Something went wrong: ${error.message}`}</p>
+      <Button onClick={() => reset()}>Try again</Button>
     </div>
   );
 };

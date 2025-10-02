@@ -2,6 +2,8 @@ import React from 'react';
 import Post from '@/app/components/post/post';
 import { getPostText } from '@/app/lib/api';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
+import ErrorButton from '@/app/components/errorButton/error-button';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const posts = await getPostText();
@@ -31,8 +33,17 @@ export default async function Page({ params }) {
   const dictionary = await getDictionary(lang);
   const { id } = await params;
 
+  const posts = await getPostText();
+  const post = posts.find((p) => p.id.toString() === id);
+  if (!post) {
+    notFound();
+  }
+
   return (
     <>
+      <ErrorButton dictionary={dictionary}>
+        {dictionary.common.clickButton}
+      </ErrorButton>
       <Post id={id} dictionary={dictionary} />
     </>
   );

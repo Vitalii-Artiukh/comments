@@ -1,5 +1,4 @@
 import React from 'react';
-import HomeComponent from '@/app/components/homeComponent/homeComponent';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 import getQueryClient from '@/app/lib/utils/getQueryClient';
 import { getPosts } from '@/app/lib/api';
@@ -30,7 +29,9 @@ export default async function Page({ params }) {
 
   return (
     <HydrationBoundary state={dehydratedState}>
-      <ErrorButton>{dictionary.common.clickButton}</ErrorButton>
+      <ErrorButton dictionary={dictionary}>
+        {dictionary.common.clickButton}
+      </ErrorButton>
       <PostsTitle dictionary={dictionary} lang={lang} />
     </HydrationBoundary>
   );

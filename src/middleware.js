@@ -7,7 +7,7 @@ export function middleware(request) {
   const { pathname } = request.nextUrl;
 
   // Пропускаємо статичні файли
-  if (PUBLIC_FILE.test(pathname)) return;
+  if (PUBLIC_FILE.test(pathname)) return NextResponse.next();
 
   if (pathname === '/') {
     return NextResponse.redirect(new URL(`/${LOCALS.EN}/posts`, request.url));
@@ -20,7 +20,7 @@ export function middleware(request) {
     pathname === `/${LOCALS.EN}` ||
     pathname === `/${LOCALS.UK}`
   ) {
-    return;
+    return NextResponse.next();
   }
 
   // Перенаправляємо на англійську версію за замовчуванням
