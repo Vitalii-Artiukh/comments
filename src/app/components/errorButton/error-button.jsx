@@ -7,7 +7,7 @@ const ErrorButton = ({ dictionary, children }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (count > 4) {
+    if (count > 1) {
       throw new Error(`${dictionary.common.began}`);
     }
   }, [count]);

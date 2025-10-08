@@ -18,7 +18,9 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={lang}>
       <body className={fonts.className}>
-        <Providers>{children}</Providers>
+        <Providers dictionary={dictionary} lang={lang}>
+          {children}
+        </Providers>
       </body>
     </html>
   );

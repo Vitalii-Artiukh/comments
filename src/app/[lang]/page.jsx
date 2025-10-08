@@ -29,7 +29,9 @@ export default async function Home({ params }) {
 
   return (
     <HydrationBoundary state={dehydratedState}>
-      <ErrorButton>{dictionary.common.clickButton}</ErrorButton>
+      <ErrorButton dictionary={dictionary}>
+        {dictionary.common.clickButton}
+      </ErrorButton>
       <PostsTitle dictionary={dictionary} lang={lang} />
     </HydrationBoundary>
   );

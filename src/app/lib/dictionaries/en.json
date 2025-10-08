@@ -3,13 +3,22 @@
     "home": "Home",
     "about": "About"
   },
+  "error": {
+    "unk": "Something wrong",
+    "again": "Try again"
+  },
+  "notFound": {
+    "title": "404",
+    "description": "Such page does not exist",
+    "notPost": "Could not find post"
+  },
   "common": {
     "posts": "Posts",
     "readMy": "Read my",
     "user": "User",
     "id": "id",
     "clickButton": "Click a lot",
-    "return": "Return to ",
+    "return": "Return",
     "began": "Was knocking!"
   },
   "about": {
