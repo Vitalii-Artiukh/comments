@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from '@/app/components/post/post';
-import { getPosts, getPostText } from '@/app/lib/api';
+import { getPosts } from '@/app/lib/api';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 import ErrorButton from '@/app/components/errorButton/error-button';
 import { notFound } from 'next/navigation';

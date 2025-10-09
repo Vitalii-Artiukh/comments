@@ -3,7 +3,16 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@/app/components/button/button';
 
-const ErrorButton = ({ dictionary, children }) => {
+interface ErrorButtonProps {
+  dictionary: {
+    common: {
+      began: string;
+    };
+  };
+  children: React.ReactNode;
+}
+
+const ErrorButton = ({ dictionary, children }: ErrorButtonProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {

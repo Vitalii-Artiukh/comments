@@ -3,7 +3,13 @@ import About from '@/app/components/about/about';
 import ErrorButton from '@/app/components/errorButton/error-button';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 
-const Page = async ({ params }) => {
+interface PageProps {
+  params: Promise<{
+    lang: string;
+  }>;
+}
+
+const Page = async ({ params }: PageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 

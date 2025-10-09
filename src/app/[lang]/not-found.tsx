@@ -5,7 +5,15 @@ import Link from 'next/link';
 import { useDictionary } from '@/app/components/providers';
 
 const NotFound = ({}) => {
-  const dictionary = useDictionary();
+  const dictionary: {
+    notFound: {
+      title: string;
+      description: string;
+    };
+    error: {
+      again: string;
+    };
+  } = useDictionary();
 
   return (
     <div

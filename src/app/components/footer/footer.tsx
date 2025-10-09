@@ -5,7 +5,22 @@ import Link from 'next/link';
 import { EMAIL } from '@/app/lib/utils/constants';
 import clsx from 'clsx';
 
-const Footer = ({ dictionary, lang, children }) => {
+interface FooterProps {
+  children?: React.ReactNode;
+  lang: string;
+  dictionary: {
+    about: {
+      name: string;
+      titleForName: string;
+      titleForEmail: string;
+    };
+    nav: {
+      about: string;
+    };
+  };
+}
+
+const Footer = ({ dictionary, lang, children }: FooterProps) => {
   const about = dictionary?.about ?? {};
   const titleName = about?.titleForName ?? 'Name';
   const titleEmail = about?.titleForEmail ?? 'Email';

@@ -2,11 +2,17 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Button from '@/app/components/button/button';
 import { useDictionary } from '@/app/components/providers';
+import { ErrorTypes } from '@/app/lib/types/types';
 
-const ErrorComponent = ({ error }) => {
-  const dictionary = useDictionary();
+interface ErrorProps {
+  error: {
+    message: string;
+  };
+}
+
+const ErrorComponent = ({ error }: ErrorProps) => {
+  const dictionary: ErrorTypes = useDictionary();
 
   return (
     <div
@@ -23,8 +29,8 @@ const ErrorComponent = ({ error }) => {
     >
       <p
         style={{ marginBottom: '10px', color: 'darkred', fontSize: '18px' }}
-      >{`${dictionary.error.unk}: ${error.message}`}</p>
-      <Link href={'/posts'}>{dictionary.error.again}</Link>
+      >{`${dictionary.error?.unk}: ${error.message}`}</p>
+      <Link href={'/posts'}>{dictionary.error?.again}</Link>
     </div>
   );
 };

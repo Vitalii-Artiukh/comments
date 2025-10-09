@@ -6,7 +6,12 @@ import Container from '@/app/components/container/container';
 
 interface HeaderProps {
   children?: React.ReactNode;
-  dictionary: string[];
+  dictionary: {
+    nav: {
+      home: string;
+      about: string;
+    };
+  };
   lang: string;
 }
 

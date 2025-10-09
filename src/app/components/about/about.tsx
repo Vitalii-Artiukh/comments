@@ -4,7 +4,11 @@ import css from './about.module.css';
 import { EMAIL } from '@/app/lib/utils/constants';
 import Link from 'next/link';
 
-const About = async ({ lang }) => {
+interface AboutProps {
+  lang: string;
+}
+
+const About = async ({ lang }: AboutProps) => {
   const dictionary = await getDictionary(lang);
 
   return (

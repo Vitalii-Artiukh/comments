@@ -4,8 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { useDictionary } from '@/app/components/providers';
 
-const NotFound = ({}) => {
-  const dictionary = useDictionary();
+const NotFound: React.FC<Element> = ({}) => {
+  const dictionary: {
+    notFound: { title: string; notPost: string };
+    common: { return: string };
+  } = useDictionary();
   return (
     <div
       style={{
@@ -20,10 +23,10 @@ const NotFound = ({}) => {
       }}
     >
       <h1 style={{ fontSize: '72px', margin: '0' }}>
-        {dictionary.notFound.title}
+        {dictionary.notFound?.title}
       </h1>
-      <p>{dictionary.notFound.notPost}</p>
-      <Link href={'/posts'}>{dictionary.common.return}</Link>
+      <p>{dictionary.notFound?.notPost}</p>
+      <Link href={'/posts'}>{dictionary.common?.return}</Link>
     </div>
   );
 };

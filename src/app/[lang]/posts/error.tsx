@@ -2,11 +2,18 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Button from '@/app/components/button/button';
 import { useDictionary } from '@/app/components/providers';
+import { ErrorTypes } from '@/app/lib/types/types';
 
-const ErrorComponent = ({ error, reset }) => {
-  const dictionary = useDictionary();
+interface ErrorProps {
+  error: {
+    message: string;
+  };
+  reset: () => void;
+}
+
+const ErrorComponent = ({ error, reset }: ErrorProps) => {
+  const dictionary: ErrorTypes = useDictionary();
 
   return (
     <div
@@ -23,9 +30,9 @@ const ErrorComponent = ({ error, reset }) => {
     >
       <p
         style={{ marginBottom: '10px', color: 'darkred', fontSize: '18px' }}
-      >{`${dictionary.error.unk}: ${error.message}`}</p>
+      >{`${dictionary.error?.unk}: ${error.message}`}</p>
       <Link href={''} onClick={() => reset()}>
-        {dictionary.error.again}
+        {dictionary.error?.again}
       </Link>
     </div>
   );

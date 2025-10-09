@@ -12,15 +12,17 @@ export async function generateStaticParams() {
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: Promise<{
+    lang: string;
+  }>;
 }
 
 export default async function Layout({ children, params }: LayoutProps) {
   const { lang = LOCALS.EN } = (await params) || {};
-  const dictionary: Promise<null | string[]> = await getDictionary(lang);
+  const dictionary = await getDictionary(lang);
 
   return (
-    <Providers dictionary={dictionary} lang={lang}>
+    <Providers dictionary={dictionary}>
       <Header dictionary={dictionary} lang={lang} />
       <main>
         <Container>

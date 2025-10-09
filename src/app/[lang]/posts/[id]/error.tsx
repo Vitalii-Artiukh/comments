@@ -1,13 +1,23 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Button from '@/app/components/button/button';
-import { dictionaries } from '@/app/lib/utils/constants';
 import { useDictionary } from '@/app/components/providers';
 
-const ErrorComponent = ({ error, reset }) => {
-  const dictionary = useDictionary();
+interface ErrorProps {
+  error: {
+    message: string;
+  };
+  reset: () => void;
+}
+
+const ErrorComponent = ({ error, reset }: ErrorProps) => {
+  const dictionary: {
+    error: {
+      unk: string;
+      again: string;
+    };
+  } = useDictionary();
   return (
     <div>
       <p>

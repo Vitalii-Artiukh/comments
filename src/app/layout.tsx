@@ -11,16 +11,24 @@ export async function generateStaticParams() {
   return [{ lang: LOCALS.UK }, { lang: LOCALS.EN }];
 }
 
-export default async function RootLayout({ children, params }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{
+    lang: string;
+  }>;
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
   const { lang = LOCALS.EN } = (await params) || {};
   const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang}>
       <body className={fonts.className}>
-        <Providers dictionary={dictionary} lang={lang}>
-          {children}
-        </Providers>
+        <Providers dictionary={dictionary}>{children}</Providers>
       </body>
     </html>
   );

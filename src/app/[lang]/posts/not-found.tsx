@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 
-const NotFound = ({}) => {
+const NotFound: React.FC<Element> = ({}) => {
   return (
     <div>
       <h1>404</h1>
