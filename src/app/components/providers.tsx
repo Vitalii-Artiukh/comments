@@ -4,6 +4,11 @@ import React, { createContext, useContext, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
+interface ProvidersProps {
+  children: React.ReactNode;
+  dictionary: null;
+}
+
 // Створюємо контекст для словника
 const DictionaryContext = createContext(null);
 
@@ -16,7 +21,7 @@ export const useDictionary = () => {
   return dictionary;
 };
 
-const Providers = ({ children, dictionary }) => {
+const Providers = ({ children, dictionary }: ProvidersProps) => {
   const client = useMemo(() => new QueryClient(), []);
 
   return (

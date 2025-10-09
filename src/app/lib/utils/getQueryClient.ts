@@ -2,7 +2,7 @@ import { cache } from 'react';
 import { QueryClient } from '@tanstack/react-query';
 
 const getQueryClient = cache(
-  () =>
+  (): QueryClient =>
     new QueryClient({
       defaultOptions: {
         queries: {
@@ -13,7 +13,7 @@ const getQueryClient = cache(
           staleTime: 60 * 1000,
 
           // Кешування даних
-          cacheTime: 5 * 60 * 1000,
+          gcTime: 5 * 60 * 1000,
 
           // Повторні спроби при помилці
           retry: 1,

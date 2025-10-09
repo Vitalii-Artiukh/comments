@@ -4,7 +4,13 @@ import css from './header.module.css';
 import LanguageSwitcher from '@/app/components/LanguageSwitcher/LanguageSwitcher';
 import Container from '@/app/components/container/container';
 
-const Header = ({ dictionary, lang, children }) => {
+interface HeaderProps {
+  children?: React.ReactNode;
+  dictionary: string[];
+  lang: string;
+}
+
+const Header = ({ dictionary, lang, children }: HeaderProps) => {
   return (
     <header className={css.header}>
       <Container className={css.dataWrapper}>

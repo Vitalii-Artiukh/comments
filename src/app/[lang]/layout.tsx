@@ -10,9 +10,14 @@ export async function generateStaticParams() {
   return [{ lang: 'uk' }, { lang: 'en' }];
 }
 
-export default async function Layout({ children, params }) {
+interface LayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}
+
+export default async function Layout({ children, params }: LayoutProps) {
   const { lang = LOCALS.EN } = (await params) || {};
-  const dictionary = await getDictionary(lang);
+  const dictionary: Promise<null | string[]> = await getDictionary(lang);
 
   return (
     <Providers dictionary={dictionary} lang={lang}>

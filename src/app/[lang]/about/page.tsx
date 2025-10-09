@@ -7,8 +7,6 @@ const Page = async ({ params }) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
-  console.log(dictionary);
-
   return (
     <div>
       <ErrorButton dictionary={dictionary}>

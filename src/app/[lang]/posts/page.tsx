@@ -5,22 +5,29 @@ import { getPosts } from '@/app/lib/api';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import PostsTitle from '@/app/components/posts-title/posts-title';
 import ErrorButton from '@/app/components/errorButton/error-button';
+import { PostTypes } from '@/app/lib/types/types';
+
+interface PageProps {
+  params: Promise<{
+    lang: string;
+  }>;
+}
 
 export async function generateStaticParams() {
-  const locales = ['uk', 'en'];
+  const locales: string[] = ['uk', 'en'];
 
   return locales.map((lang) => ({
     lang,
   }));
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params }: PageProps) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   const queryClient = getQueryClient();
 
-  await queryClient.prefetchQuery({
+  await queryClient.prefetchQuery<PostTypes[], Error>({
     queryKey: ['posts'],
     queryFn: () => getPosts(),
   });

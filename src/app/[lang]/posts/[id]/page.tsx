@@ -1,12 +1,20 @@
 import React from 'react';
 import Post from '@/app/components/post/post';
-import { getPostText } from '@/app/lib/api';
+import { getPosts, getPostText } from '@/app/lib/api';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
 import ErrorButton from '@/app/components/errorButton/error-button';
 import { notFound } from 'next/navigation';
+import { PostTypes } from '@/app/lib/types/types';
 
-export async function generateStaticParams() {
-  const posts = await getPostText();
+interface PageProps {
+  params: Promise<{
+    lang: string;
+    id: string;
+  }>;
+}
+
+export async function generateStaticParams(): Promise<Array<{ id: string }>> {
+  const posts: PostTypes[] = await getPosts();
 
   // Якщо потрібно обмежити кількість статичних сторінок до 10
   // const limitedPosts = posts.slice(0, 10);
@@ -28,12 +36,12 @@ export async function generateStaticParams() {
 
 export const dynamicParams = true;
 
-export default async function Page({ params }) {
-  const { lang } = await params;
+export default async function Page({ params }: PageProps) {
+  const { lang, id } = await params;
   const dictionary = await getDictionary(lang);
-  const { id } = await params;
+  // const { id } = await params;
 
-  const posts = await getPostText();
+  const posts: PostTypes[] = await getPosts();
   const post = posts.find((p) => p.id.toString() === id);
   if (!post) {
     notFound();

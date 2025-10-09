@@ -7,9 +7,13 @@ import { LOCALS } from '@/app/lib/utils/constants';
 import css from './LanguageSwitcher.module.css';
 import Image from 'next/image';
 
-const LanguageSwitcher = ({ currentLang }) => {
+interface LanguageSwitcherProps {
+  currentLang: string;
+}
+
+const LanguageSwitcher = ({ currentLang }: LanguageSwitcherProps) => {
   const pathname = usePathname();
-  const redirectedPathName = (locale) => {
+  const redirectedPathName = (locale: string) => {
     if (!pathname) return '/';
     const segments = pathname.split('/');
     segments[1] = locale;

@@ -1,10 +1,21 @@
 import React from 'react';
 import { getPostText } from '@/app/lib/api';
 import css from './post.module.css';
+import { PostTypes } from '@/app/lib/types/types';
 
-export default async function Post({ id, dictionary }) {
+interface PostProps {
+  id: string | number;
+  dictionary: {
+    common: {
+      user: string;
+      id: string | number;
+    };
+  };
+}
+
+export default async function Post({ id, dictionary }: PostProps) {
   if (!id) return null;
-  const post = await getPostText(id);
+  const post: PostTypes = await getPostText(id);
 
   const user = () => {
     if (post.userName && post.userName !== '') {

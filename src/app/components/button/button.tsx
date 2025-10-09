@@ -4,7 +4,12 @@ import React from 'react';
 import clsx from 'clsx';
 import css from './button.module.css';
 
-const Button = ({ disabled, ...rest }) => {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  disabled?: boolean;
+  // rest?: any;
+}
+
+const Button = ({ disabled, ...rest }: ButtonProps) => {
   return (
     <button
       {...rest}
