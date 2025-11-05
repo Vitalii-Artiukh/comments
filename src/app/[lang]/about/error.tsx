@@ -12,12 +12,7 @@ interface ErrorProps {
 }
 
 const ErrorComponent = ({ error, reset }: ErrorProps) => {
-  const dictionary: {
-    error: {
-      unk: string;
-      again: string;
-    };
-  } = useDictionary();
+  const dictionary = useDictionary();
 
   return (
     <div
@@ -36,7 +31,7 @@ const ErrorComponent = ({ error, reset }: ErrorProps) => {
         {`${dictionary.error?.unk}: ${error.message}` ||
           `Something went wrong: ${error.message}`}
       </p>
-      <Button onClick={() => reset()}>{dictionary.error.again}</Button>
+      <Button onClick={() => reset()}>{dictionary.error?.again}</Button>
     </div>
   );
 };

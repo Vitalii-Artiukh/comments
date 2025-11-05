@@ -11,6 +11,7 @@ export interface ApiError {
   message: string;
   status?: number;
 }
+
 export interface NavTypes {
   nav?: {
     home?: string;
@@ -44,6 +45,7 @@ export interface CommonTypes {
     began?: string;
   };
 }
+
 export interface AboutTypes {
   about?: {
     name?: string;
@@ -52,3 +54,10 @@ export interface AboutTypes {
     projectDescription?: string;
   };
 }
+
+export interface DictionaryTypes
+  extends NavTypes,
+    ErrorTypes,
+    NotFoundTypes,
+    CommonTypes,
+    AboutTypes {}

@@ -1,11 +1,14 @@
 import React from 'react';
 import About from '@/app/components/about/about';
 import ErrorButton from '@/app/components/errorButton/error-button';
-import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
+import {
+  DictionaryLocale,
+  getDictionary,
+} from '@/app/lib/dictionaries/dictionaries';
 
 interface PageProps {
   params: Promise<{
-    lang: string;
+    lang: DictionaryLocale;
   }>;
 }
 

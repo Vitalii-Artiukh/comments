@@ -4,16 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import { useDictionary } from '@/app/components/providers';
 
-const NotFound = ({}) => {
-  const dictionary: {
-    notFound: {
-      title: string;
-      description: string;
-    };
-    error: {
-      again: string;
-    };
-  } = useDictionary();
+const NotFound = () => {
+  const dictionary = useDictionary();
 
   return (
     <div
@@ -29,10 +21,10 @@ const NotFound = ({}) => {
       }}
     >
       <h1 style={{ fontSize: '72px', margin: '0' }}>
-        {dictionary.notFound.title}
+        {dictionary.notFound?.title}
       </h1>
-      <p>{dictionary.notFound.description}</p>
-      <Link href={'/posts'}>{dictionary.error.again}</Link>
+      <p>{dictionary.notFound?.description}</p>
+      <Link href={'/posts'}>{dictionary.error?.again}</Link>
     </div>
   );
 };

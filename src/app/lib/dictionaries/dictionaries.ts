@@ -1,8 +1,14 @@
 import { dictionaries } from '@/app/lib/utils/constants';
-import { Locale } from 'next/dist/compiled/@vercel/og/satori';
+
+export type DictionaryLocale = keyof typeof dictionaries;
 
 export const getDictionary = async (locale: string) => {
-  if (!locale || !dictionaries[locale]) {
+  const isValidLocale = (loc: string): loc is DictionaryLocale => {
+    return loc in dictionaries;
+  };
+
+  // if (!locale || !dictionaries[locale]) {
+  if (!locale || !isValidLocale(locale)) {
     console.error(`Missing locale: ${locale}`);
 
     return dictionaries['uk']();

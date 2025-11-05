@@ -5,10 +5,7 @@ import Link from 'next/link';
 import { useDictionary } from '@/app/components/providers';
 
 const NotFound: React.FC<Element> = ({}) => {
-  const dictionary: {
-    notFound: { title: string; notPost: string };
-    common: { return: string };
-  } = useDictionary();
+  const dictionary = useDictionary();
   return (
     <div
       style={{

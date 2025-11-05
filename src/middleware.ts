@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { LOCALS } from '@/app/lib/utils/constants';
 
 const PUBLIC_FILE = /\.(.*)$/;
 
-export function middleware(request) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Пропускаємо статичні файли

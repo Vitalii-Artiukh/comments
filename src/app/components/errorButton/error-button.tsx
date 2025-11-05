@@ -17,7 +17,7 @@ const ErrorButton = ({ dictionary, children }: ErrorButtonProps) => {
 
   useEffect(() => {
     if (count > 1) {
-      throw new Error(`${dictionary.common.began}`);
+      throw new Error(`${dictionary.common?.began}`);
     }
   }, [count]);
 

@@ -1,15 +1,15 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Providers, { useDictionary } from '@/app/components/providers';
+import { redirect } from 'next/navigation';
 import { getDictionary } from '@/app/lib/dictionaries/dictionaries';
+import { LOCALS } from '@/app/lib/utils/constants';
 
-const NotFound = ({ lang }) => {
-  const dictionary = useDictionary();
+const RootNotFound = async () => {
+  const dictionary = await getDictionary(LOCALS.UK);
 
   return (
-    <html lang={'uk'}>
+    <html lang="uk">
       <body>
         <Providers dictionary={dictionary}>
           <div
@@ -25,10 +25,10 @@ const NotFound = ({ lang }) => {
             }}
           >
             <h1 style={{ fontSize: '72px', margin: '0' }}>
-              {dictionary.notFound.title}
+              {dictionary.notFound?.title}
             </h1>
-            <p>{dictionary.notFound.description}</p>
-            <Link href={'/posts'}>{dictionary.error.again}</Link>
+            <p>{dictionary.notFound?.description}</p>
+            <Link href={'/posts'}>{dictionary.error?.again}</Link>
           </div>
         </Providers>
       </body>
@@ -36,4 +36,4 @@ const NotFound = ({ lang }) => {
   );
 };
 
-export default NotFound;
+export default RootNotFound;
